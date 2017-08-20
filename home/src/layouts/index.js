@@ -3,40 +3,23 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-// import './index.css'
 import './stylus/index.styl'
 
 
 const Header = () =>
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
+    <div className='header'>
         <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
+          to="/" className='header__title'>
+          home
         </Link>
-      </h1>
+        <Link
+          to='/page-2' className='header__title'>
+          about
+        </Link>
     </div>
-  </div>
 
 const TemplateWrapper = ({ children }) =>
-  <div>
+  <div className='template-wrapper'>
     <Helmet
       title="Gatsby Default Starter"
       meta={[
@@ -45,14 +28,7 @@ const TemplateWrapper = ({ children }) =>
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
+    <div className='main-wrapper'>
       {children()}
     </div>
   </div>
